@@ -1,0 +1,37 @@
+<h1>Welcome to Weather Page</h1>
+<h1>Listing Weather Details</h1>
+<%if @weather_details["cod"] == "404"%>
+    <h1><%=@weather_details["message"]%></h1>
+    <%else%>
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Temparature</th>
+              <th>Pressure</th>
+              <th>Humidity</th>
+              <th>Min Temparature</th>
+              <th>Max Temparature</th>
+              <th>City</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+              <tr>
+                <td><%= @weather_details["weather"][0]["description"]%></td>
+                <td><%= @weather_details["main"]["temp"]%></td>
+                <td><%= @weather_details["main"]["pressuee"]%></td>
+                <td><%= @weather_details["main"]["humidity"]%></td>
+                <td><%= @weather_details["main"]["temp_min"]%></td>
+                <td><%= @weather_details["main"]["temp_max"]%></td>
+                <td><%= @weather_details["name"]%></td>
+              </tr>
+          </tbody>
+        </table>
+        
+        <br>
+<%end%>
+<b><a href="https://weatherweb-sachinjadhav1.c9.io/static_pages/Home">Home</a></b>
+<b><a href="https://weatherweb-sachinjadhav1.c9.io/static_pages/Contactus">ContactUs</a></b>
+
+<b><a href="https://weatherweb-sachinjadhav1.c9.io/static_pages/index">Current Weather</a></b>
